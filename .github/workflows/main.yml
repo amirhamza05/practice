@@ -36,5 +36,9 @@ jobs:
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - name: create droplet
-        run: doctl compute droplet create --image ubuntu-20-04-x64 --size s-1vcpu-1gb --region nyc1 CI-CD-Github
+      #- name: create droplet
+        #run: doctl compute droplet create --image ubuntu-20-04-x64 --size s-1vcpu-1gb --region nyc1 CI-CD-Github
+      - name: Update Droplet
+        run: |
+          doctl compute ssh root@143.244.166.165,
+          ls
