@@ -32,9 +32,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
       #- name: create droplet
         #run: doctl compute droplet create --image ubuntu-20-04-x64 --size s-1vcpu-1gb --region nyc1 CI-CD-Github
+        
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }} 
