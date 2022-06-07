@@ -42,4 +42,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }} 
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }} 
       - name: Deploy to Prod
-        run: "./deploy.sh"
+        run: "ls"
